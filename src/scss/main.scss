@@ -1,0 +1,11 @@
+@use './partials/vars' as *;
+
+@import 'bootstrap/scss/bootstrap';
+
+h1{
+  font-weight: 400;
+}
+
+body{
+  background-color: orange;
+}
