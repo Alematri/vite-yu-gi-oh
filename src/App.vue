@@ -3,6 +3,7 @@
   import {store} from './data/store.js';
   import Header from './components/Header.vue';
   import CardsContainer from './components/CardsContainer.vue';
+  import SearchBar from './components/partials/SearchBar.vue';
 
   export default{
 
@@ -10,7 +11,8 @@
 
   components:{
     Header,
-    CardsContainer
+    CardsContainer,
+    SearchBar
   },
   data(){
     return{
@@ -20,7 +22,11 @@
 
   methods:{
     getApi(){
-      axios.get(store.apiUrl)
+      axios.get(store.apiUrl,{
+        params: {
+          archetype: store.archetypeToSearch
+        }
+      })
       .then(res =>{
         store.cardList = res.data.data;
       })
@@ -40,6 +46,7 @@
 
 <template>
   <Header titleStr="Yu-Gi-Oh Api"/>
+  <SearchBar @startSearch="getApi"/>
   <CardsContainer />
 </template>
 
