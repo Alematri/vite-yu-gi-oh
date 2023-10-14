@@ -12,9 +12,6 @@ export default{
     return{
       store
     }
-  },
-  mounted(){
-    console.log(store.cardList);
   }
 }
 </script>
@@ -27,10 +24,11 @@ export default{
     </div>
     <div class="row">
       <Card
-        v-for="data in store.cardList"
-        :key="data.id"
-        :name="data.name"
-        :archetype="data.archetype"
+        v-for="card in store.cardList"
+        :key="card.id"
+        :name="card.name"
+        :archetype="card.archetype"
+        :image="card.card_images[0].image_url"
       />
     </div>
   </div>
@@ -46,6 +44,8 @@ export default{
         background-color: black;
         color: white;
         line-height: 40px;
+        border-right: 12px solid white;
+        border-left: 12px solid white;
       }
     }
   }

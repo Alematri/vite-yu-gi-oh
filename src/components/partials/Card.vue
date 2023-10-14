@@ -4,6 +4,7 @@ export default{
   props:{
     name: String,
     archetype: String,
+    image: Object
   }
 }
 </script>
@@ -11,7 +12,7 @@ export default{
 <template>
   <div class="col-2">
     <div class="sc-card">
-      <img src="https://images.ygoprodeck.com/images/cards/64163367.jpg">
+      <img :src="image">
       <div class="card-text">
         <h4>{{name}}</h4>
         <p>{{archetype}}</p>
