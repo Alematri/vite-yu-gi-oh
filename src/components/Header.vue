@@ -3,7 +3,6 @@
   name: 'Header',
   props:{
     titleStr: String
-
   }
 }
 </script>

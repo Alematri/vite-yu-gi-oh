@@ -20,7 +20,7 @@ export default{
 
   <div class="container">
     <div class="row">
-      <div class="col founded">Found 39 card</div>
+      <div class="col founded">Found cards</div>
     </div>
     <div class="row">
       <Card
